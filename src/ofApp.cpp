@@ -5,7 +5,7 @@ void ofApp::setup(){
     //setup window
     ofSetWindowShape(500,500);
     ofSetWindowPosition(0,0);
-    ofBackground(0);
+    ofBackground(60);
     
     ofSetFrameRate(20);
     
@@ -40,8 +40,8 @@ void ofApp::draw(){
     shader.begin();
     shader.setUniformTexture("earth", earth, 1);
     shader.setUniformTexture("clouds", clouds, 2);
-    shader.setUniform1f("blendAlpha", sin(ofGetElapsedTimef())/2+.5); //fade clouds
-    
+    //shader.setUniform1f("blendAlpha", sin(ofGetElapsedTimef())/2+.5); //fade clouds
+    shader.setUniform1f("blendAlpha", 0.8);
     //draw sphere
     glEnable(GL_DEPTH_TEST);
     gluSphere(quadric, 150, 400, 400);
